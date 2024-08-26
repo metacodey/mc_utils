@@ -1,7 +1,8 @@
 name: mc_utils
-description: A new Flutter package project.
+description: Video Player,TextField Custom,Custom Images,Custom Buttons ,Custom Icons, Custom Text, Custom DropDownButton,Custom List, Custom DateTime Format.
 version: 0.0.1
-homepage:
+homepage: https://github.com/metacodey/mc_utils.git
+auther: Metacodeye
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
