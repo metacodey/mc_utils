@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// [McText] is a customizable text widget that allows for various text styling
 /// options, including font size, color, boldness, line limit, and text alignment.
