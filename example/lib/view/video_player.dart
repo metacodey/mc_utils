@@ -9,6 +9,14 @@ class VideoPlayer extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const McText(
+          txt: "---- Video player asste,file,network -----",
+          fontSize: 20,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+
         Container(
           width: double.infinity,
           height: 200,
@@ -20,13 +28,15 @@ class VideoPlayer extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        // Container(
-        //   width: double.infinity,
-        //   height: 200,
-        //   child: McPlayer.asset(
-        //     path: "images/test.mp4",
-        //   ),
-        // ),
+
+        Container(
+          width: double.infinity,
+          height: 200,
+          child: McPlayer.asset(
+            path: "images/test.mp4",
+          ),
+        ),
+
         //   Container(
         //   width: double.infinity,
         //   height: 200,
@@ -34,6 +44,9 @@ class VideoPlayer extends StatelessWidget {
         //     file: File(""),
         //   ),
         // ),
+        const SizedBox(
+          height: 10,
+        ),
       ],
     );
   }

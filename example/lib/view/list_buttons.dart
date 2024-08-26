@@ -17,7 +17,7 @@ class ListButtons extends StatelessWidget {
           height: 10,
         ),
         McListButtons(
-          list: const ["ali", "salh", "mohmmed", "abdo", "younas"],
+          list: const ["ali", "salh", "alaa", "abdo", "younas"],
           sizeFont: 20,
           radius: 30,
           isHorizontal: false,

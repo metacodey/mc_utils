@@ -1,6 +1,9 @@
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 
+/// [McDropDownBtn] is a customizable dropdown button widget that supports both searchable and non-searchable dropdowns.
+/// It allows for customization of the dropdown's appearance, including color, border radius, and padding,
+/// and supports callbacks for item selection changes.
 class McDropDownBtn<T> extends StatelessWidget {
   final String title;
   final T? model;
@@ -12,6 +15,25 @@ class McDropDownBtn<T> extends StatelessWidget {
   final SingleSelectController<T>? controller;
   final void Function(T?)? onChange;
 
+  /// The [McDropDownBtn] constructor allows you to specify various properties for the dropdown button.
+  ///
+  /// [title] is the hint text displayed when the dropdown is closed.
+  ///
+  /// [model] is the initially selected item in the dropdown.
+  ///
+  /// [list] is the list of items to be displayed in the dropdown.
+  ///
+  /// [isSearch] determines whether the dropdown should support searching for items.
+  ///
+  /// [color] sets the background color of the dropdown when closed.
+  ///
+  /// [radius] specifies the border radius of the dropdown.
+  ///
+  /// [closedHeaderPadding] defines the padding around the closed dropdown header.
+  ///
+  /// [controller] allows for programmatic control of the dropdown selection.
+  ///
+  /// [onChange] is a callback function that is called when an item is selected from the dropdown.
   const McDropDownBtn({
     super.key,
     required this.title,

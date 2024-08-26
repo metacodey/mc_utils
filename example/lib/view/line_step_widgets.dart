@@ -20,7 +20,7 @@ class LineStepWidgets extends StatelessWidget {
             colorFont: Colors.pink,
             colorLine: Colors.pink,
           ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 10,
         ),

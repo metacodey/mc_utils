@@ -2,7 +2,11 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:intl/intl.dart' as intl;
 
+/// [McProcess] provides various utility methods for file handling,
+/// text alignment, numeric checks, date-time formatting, and more.
 class McProcess {
+  /// [getFileType] determines the type of file (image, video, document, or unknown)
+  /// based on its extension.
   static String getFileType(String fileName) {
     // Get the file extension
     String extension = fileName.split('.').last.toLowerCase();
@@ -47,6 +51,8 @@ class McProcess {
     return 'unknown';
   }
 
+  /// [alignTxtMessage] determines the text direction (LTR or RTL) based on
+  /// the content of the text, setting it to RTL if Arabic characters are detected.
   static TextDirection alignTxtMessage(String txt) {
     TextDirection? align;
 
@@ -62,6 +68,7 @@ class McProcess {
     return align;
   }
 
+  /// [checkFile] checks whether the provided file path exists.
   static bool checkFile(File pathFile) {
     if (pathFile.existsSync()) {
       return true;
@@ -70,12 +77,15 @@ class McProcess {
     }
   }
 
+  /// [checkIsNumirc] checks if the given text consists of numeric characters only.
   static bool checkIsNumirc(String txt) {
     RegExp regExp = RegExp(r'^\d+$');
     bool isNum = regExp.hasMatch(txt);
     return isNum;
   }
 
+  /// [containsArabicLettersOrSpacesOrUnallowedSymbols] checks if the text
+  /// contains Arabic letters, spaces, or unallowed symbols.
   static bool containsArabicLettersOrSpacesOrUnallowedSymbols(String text) {
     // Regular expression that matches Arabic characters, spaces, or unallowed symbols
     RegExp regex = RegExp(r'[\u0600-\u06FF\s]|[^\w-_]');
@@ -84,7 +94,9 @@ class McProcess {
     return regex.hasMatch(text);
   }
 
-  static String changeTxtToDate(DateTime dateTime) {
+  /// [changeDateTime] converts a [DateTime] object into a user-friendly string
+  /// describing how much time has passed since that date.
+  static String changeDateTime(DateTime dateTime) {
     DateTime now = DateTime.now();
     final int differenceInSeconds = now.difference(dateTime).inSeconds;
 
@@ -144,15 +156,18 @@ class McProcess {
     return intl.DateFormat('yyyy/MM/dd').format(dateTime);
   }
 
+  /// [getTime] returns the current time formatted as 'hh:mm a'.
   static String getTime(DateTime? dateTime) {
     DateTime now = dateTime != null ? dateTime : DateTime.now();
-// Format the time. For example, 'hh:mm a' for hour:minute AM/PM
+    // Format the time. For example, 'hh:mm a' for hour:minute AM/PM
     String formattedTime = intl.DateFormat('hh:mm a').format(now);
-    //   print("Formatted Time: $formattedTime");
     return formattedTime;
   }
 
-  String calculateTimeDifference(DateTime dateNow, DateTime futureDate) {
+  /// [calculateTimeDifference] calculates the difference between a future date
+  /// and the current date, returning it as a string indicating the number of days,
+  /// hours, minutes, or seconds remaining.
+  static String calculateTimeDifference(DateTime dateNow, DateTime futureDate) {
     DateTime now = dateNow;
     if (futureDate.isBefore(now)) {
       return 'Finished';
@@ -165,21 +180,20 @@ class McProcess {
     } else if (difference.inHours > 0) {
       return '${difference.inHours} Hour';
     } else if (difference.inMinutes > 0) {
-      return '${difference.inMinutes} Munite';
+      return '${difference.inMinutes} Minute';
     } else {
       return '${difference.inSeconds} Seconds';
     }
   }
 
-  static String getDateArabic(String date) {
-    //print(date);
+  /// [getDateEnglish] converts a date string to a formatted date in English.
+  static String getDateEnglish(String date) {
     DateTime now = DateTime.parse(date);
-    //String formattedDate = intl.DateFormat.yMEd('ar_Ar').format(now);
     String formattedDate = intl.DateFormat.yMEd('en_US').format(now);
-
     return formattedDate;
   }
 
+  /// [formatNumber] formats a number string with commas for readability.
   static String formatNumber(String number) {
     var oCcy = intl.NumberFormat("#,##0", "en_US");
     return oCcy.format(number.isEmpty ? 0 : int.parse(number));

@@ -10,7 +10,7 @@ class ImageWidgets extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         McText(
-          txt: "----------- Images ------------",
+          txt: "------- Images asste,file,network ------",
           fontSize: 20,
         ),
         SizedBox(
