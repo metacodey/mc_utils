@@ -132,7 +132,7 @@ class McPopUpMenChat extends StatelessWidget {
       surfaceTintColor: surfaceTintColor,
       position: position ?? PopupMenuPosition.under,
       offset: offset ?? const Offset(-0, 10),
-      color: color ?? Theme.of(context).colorScheme.background,
+      color: color ?? Theme.of(context).colorScheme.surface,
       shape: shape ??
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),

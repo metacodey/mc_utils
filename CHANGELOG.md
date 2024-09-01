@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * TODO:vresion one
+
+## 0.0.3
+
+* TODO:fix attributes

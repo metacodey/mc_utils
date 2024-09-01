@@ -23,28 +23,28 @@ class ButtonWidgets extends StatelessWidget {
             McButton(
               txt: "login".toUpperCase(),
               icon: Icons.login,
-              color: Color(0xFF092A77),
-              colorBorder: Color(0xFF092A77),
+              color: const Color(0xFF092A77),
+              colorBorder: const Color(0xFF092A77),
               blod: true,
               fontSize: 18,
               raudis: 10,
-              width: true,
+              defualtWideth: true,
               onTap: () {
-                print("button");
+                //  print("button");
               },
             ),
             McButton(
               txt: "login",
-              colorBtn: Color(0xFF092A77),
+              colorBtn: const Color(0xFF092A77),
               color: Colors.white,
               icon: Icons.login,
               colorBorder: Colors.white,
               blod: true,
               fontSize: 18,
               raudis: 10,
-              width: true,
+              defualtWideth: true,
               onTap: () {
-                print("button");
+                //       print("button");
               },
             ),
           ],
@@ -56,19 +56,19 @@ class ButtonWidgets extends StatelessWidget {
         //button
         McButton(
           txt: "login",
-          colorBtn: Color(0xFF092A77),
+          colorBtn: const Color(0xFF092A77),
           color: Colors.white,
           icon: Icons.login,
           colorBorder: Colors.white,
           blod: true,
           fontSize: 18,
           raudis: 20,
-          width: false,
+          defualtWideth: false,
           onTap: () {
-            print("button");
+            //   print("button");
           },
         ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 10,
         ),
@@ -82,7 +82,7 @@ class ButtonWidgets extends StatelessWidget {
         // icon and text
         McIconTxt(
           icons: Icons.done,
-          bgColor: Color(0xFF092A77),
+          bgColor: const Color(0xFF092A77),
           blod: true,
           icColor: Colors.white,
           sizeIcon: 30,
@@ -91,7 +91,7 @@ class ButtonWidgets extends StatelessWidget {
           text: "hi how are you",
           tiColor: Colors.black,
           onPress: () {
-            print("button");
+            //      print("button");
           },
         ),
         const SizedBox(
@@ -99,16 +99,16 @@ class ButtonWidgets extends StatelessWidget {
         ),
         McIconTxt(
           icons: Icons.done,
-          bgColor: Color(0xFF092A77),
+          bgColor: const Color(0xFF092A77),
           blod: true,
           icColor: Colors.white,
           sizeIcon: 30,
           rudisIcon: 20,
           onPress: () {
-            print("button");
+            // print("button");
           },
         ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 10,
         ),

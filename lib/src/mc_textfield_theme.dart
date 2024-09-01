@@ -26,7 +26,7 @@ class McTextFieldTheme {
   /// Returns:
   /// - An [InputDecoration] with the specified customization.
   static InputDecoration textInputDecoration({
-    String lableText = "",
+    String? lableText,
     String hintText = "",
     Widget? prefixIcon,
     Color? fillColor,
@@ -36,10 +36,11 @@ class McTextFieldTheme {
     EdgeInsetsGeometry? contentPadding,
     BorderRadius borderRadius = const BorderRadius.all(Radius.circular(10)),
     BorderSide? borderSide,
-    Color errorBorder = Colors.red,
+    BorderSide? errorBorder,
   }) {
     borderSide ??=
         const BorderSide(color: Color.fromRGBO(2, 57, 88, 1), width: 1);
+    errorBorder ??= const BorderSide(color: Colors.red, width: 2.0);
     return InputDecoration(
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
@@ -59,9 +60,9 @@ class McTextFieldTheme {
       disabledBorder: OutlineInputBorder(
           borderSide: borderSide, borderRadius: borderRadius),
       errorBorder: OutlineInputBorder(
-          borderRadius: borderRadius, borderSide: borderSide),
+          borderRadius: borderRadius, borderSide: errorBorder),
       focusedErrorBorder: OutlineInputBorder(
-          borderRadius: borderRadius, borderSide: borderSide),
+          borderRadius: borderRadius, borderSide: errorBorder),
     );
   }
 

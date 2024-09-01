@@ -40,7 +40,7 @@ class TextFieldWidgets extends StatelessWidget {
             keyboardType: TextInputType.text,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Row(
@@ -57,7 +57,7 @@ class TextFieldWidgets extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     suffixIcon: const Padding(
                       padding: EdgeInsets.all(6),
-                      child: const Row(
+                      child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(Icons.mic),
@@ -90,7 +90,7 @@ class TextFieldWidgets extends StatelessWidget {
             )
           ],
         ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 10,
         ),

@@ -9,14 +9,14 @@ class TextWidgets extends StatelessWidget {
     return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const McText(
+        McText(
           txt: "----------- Text and Lines ------------",
           fontSize: 20,
         ),
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // multi lines
@@ -52,10 +52,10 @@ class TextWidgets extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
+        SizedBox(
           height: 20,
         ),
-        const McCardItem(
+        McCardItem(
           width: double.infinity,
           child: McText(
             txt: " show five words in this line ",
@@ -66,7 +66,7 @@ class TextWidgets extends StatelessWidget {
           ),
         ),
         Divider(),
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
       ],

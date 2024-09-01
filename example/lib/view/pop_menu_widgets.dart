@@ -53,7 +53,7 @@ class PopMenuWidgets extends StatelessWidget {
               child: McText(txt: "click on me"),
             ),
             McPopUpMenChat(
-              color: Color(0xFF092A77),
+              color: const Color(0xFF092A77),
               position: PopupMenuPosition.over,
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.zero,
@@ -79,7 +79,7 @@ class PopMenuWidgets extends StatelessWidget {
             )
           ],
         ),
-        Divider(),
+        const Divider(),
         const SizedBox(
           height: 10,
         ),

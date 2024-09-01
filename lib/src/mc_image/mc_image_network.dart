@@ -47,6 +47,7 @@ class McImageNetWork extends StatelessWidget {
           image: DecorationImage(image: imageProvider, fit: fit),
         ),
       ),
+      // ignore: sized_box_for_whitespace
       placeholder: (context, url) => Container(
         width: width,
         height: height,

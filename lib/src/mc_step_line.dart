@@ -36,50 +36,48 @@ class McStepLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Creates the progress indicator with steps.
-          Directionality(
-            textDirection: TextDirection.ltr,
-            child: Row(
-              children: [
-                // Loops through the steps to create the progress indicator.
-                for (int i = 1; i <= countStep; i++)
-                  Opacity(
-                    // Adjusts opacity based on whether the step is completed.
-                    opacity: step >= i ? 1 : 0.5,
-                    child: Container(
-                      color: colorLine,
-                      width: 25,
-                      height: 5.5,
-                    ),
-                  )
-              ],
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        // Creates the progress indicator with steps.
+        Directionality(
+          textDirection: TextDirection.ltr,
+          child: Row(
+            children: [
+              // Loops through the steps to create the progress indicator.
+              for (int i = 1; i <= countStep; i++)
+                Opacity(
+                  // Adjusts opacity based on whether the step is completed.
+                  opacity: step >= i ? 1 : 0.5,
+                  child: Container(
+                    color: colorLine,
+                    width: 25,
+                    height: 5.5,
+                  ),
+                )
+            ],
           ),
-          const SizedBox(width: 10),
-          // Displays the title using the McText widget.
-          mc_utils.McText(
-            txt: title,
-            fontSize: fontSize,
-            color: colorFont,
-            show5Words: true,
-            line: 1,
-            blod: true,
-          ),
-          // Displays the current step out of the total steps.
-          mc_utils.McText(
-            txt: " $step/$countStep ",
-            fontSize: fontSize,
-            color: colorFont,
-            show5Words: true,
-            blod: true,
-            line: 1,
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(width: 10),
+        // Displays the title using the McText widget.
+        mc_utils.McText(
+          txt: title,
+          fontSize: fontSize,
+          color: colorFont,
+          show5Words: true,
+          line: 1,
+          blod: true,
+        ),
+        // Displays the current step out of the total steps.
+        mc_utils.McText(
+          txt: " $step/$countStep ",
+          fontSize: fontSize,
+          color: colorFont,
+          show5Words: true,
+          blod: true,
+          line: 1,
+        ),
+      ],
     );
   }
 }

@@ -17,14 +17,13 @@ class ToolWidget extends StatelessWidget {
           height: 10,
         ),
         McText(
-          txt: "get Type file =>" + McProcess.getFileType("assets/1.jpg"),
+          txt: "get Type file =>${McProcess.getFileType("assets/1.jpg")}",
         ),
         const SizedBox(
           height: 5,
         ),
         McText(
-          txt: "check nummber  : 44521 =>" +
-              McProcess.checkIsNumirc("44521").toString(),
+          txt: "check nummber  : 44521 =>${McProcess.checkIsNumirc("44521")}",
         ),
         const SizedBox(
           height: 5,

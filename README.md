@@ -10,7 +10,7 @@ Video Player,TextField Custom,Custom Images,Custom Buttons ,Custom Icons, Custom
 
 
 
-> Please contribute to the [discussion](https://github.com/metacodey/mc-custom-notification/issues) with issues.
+> Please contribute to the [discussion](https://github.com/metacodey/mc_utils/issues with issues.
 
 [<img src="https://meta-code-ye.com/mcwebsit/web/images/logo.png" width="200" />](https://meta-code-ye.com)
 
@@ -32,7 +32,7 @@ Video Player,TextField Custom,Custom Images,Custom Buttons ,Custom Icons, Custom
 
 | Feature/platform   | Android | iOS | Web              | macOS            | Windows          | Linux            |
 | ------------------ | ------- | --- | ---------------- | ---------------- | ---------------- | ---------------- |
-| Notification       | ✓       | ✓   | ╳                | ╳                | ╳ <sup>(1)</sup> | ╳ <sup>(1)</sup> |
+| Mc Utils       | ✓       | ✓   | ╳                | ╳                | ╳ <sup>(1)</sup> | ╳ <sup>(1)</sup> |
 
 
 ## Features

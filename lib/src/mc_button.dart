@@ -9,7 +9,9 @@ class McButton extends McText {
   final Color colorBtn;
   final IconData? icon;
   final Function()? onTap;
-  final bool width;
+  final double? width;
+  final bool defualtWideth;
+  final double? sizeIcon;
   final double raudis;
   final EdgeInsetsGeometry? padding;
 
@@ -51,7 +53,7 @@ class McButton extends McText {
     this.onTap,
     this.icon,
     this.raudis = 10,
-    this.width = false,
+    this.width,
     this.colorBtn = Colors.white,
     this.colorBorder = Colors.black,
     required super.txt,
@@ -62,6 +64,8 @@ class McButton extends McText {
     super.fontFamily,
     super.txtAlign,
     super.show5Words = false,
+    this.defualtWideth = false,
+    this.sizeIcon,
     this.padding =
         const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
   });
@@ -71,7 +75,8 @@ class McButton extends McText {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: width ? MediaQuery.of(context).size.width * 0.4 : null,
+        width: width ??
+            (defualtWideth ? MediaQuery.of(context).size.width * 0.4 : null),
         padding: padding ??
             const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
         decoration: BoxDecoration(
@@ -85,6 +90,7 @@ class McButton extends McText {
             if (icon != null)
               Icon(
                 icon,
+                size: sizeIcon,
                 color: color,
               ),
             if (icon != null)

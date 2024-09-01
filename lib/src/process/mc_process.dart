@@ -158,7 +158,7 @@ class McProcess {
 
   /// [getTime] returns the current time formatted as 'hh:mm a'.
   static String getTime(DateTime? dateTime) {
-    DateTime now = dateTime != null ? dateTime : DateTime.now();
+    DateTime now = dateTime ?? DateTime.now();
     // Format the time. For example, 'hh:mm a' for hour:minute AM/PM
     String formattedTime = intl.DateFormat('hh:mm a').format(now);
     return formattedTime;

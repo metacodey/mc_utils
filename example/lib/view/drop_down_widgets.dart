@@ -18,7 +18,7 @@ class DropDownWidgets extends StatelessWidget {
       McCardItem(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        colorBorder: Color(0xFF092A77),
+        colorBorder: const Color(0xFF092A77),
         child: McDropDownBtn<UserModel>(
           isSearch: true,
           title: "Drop Down Button with Search",
@@ -30,11 +30,11 @@ class DropDownWidgets extends StatelessWidget {
           ],
           color: const Color.fromRGBO(238, 238, 238, 1),
 
-          closedHeaderPadding: EdgeInsets.all(10),
+          closedHeaderPadding: const EdgeInsets.all(10),
           onChange: (user) {
-            print(user?.id);
-            print(user?.name);
-            print(user?.age);
+            // print(user?.id);
+            // print(user?.name);
+            // print(user?.age);
           },
         ),
       ),
@@ -51,7 +51,7 @@ class DropDownWidgets extends StatelessWidget {
           list: ["ali", "salh", "mohmmed"],
         ),
       ),
-      Divider(),
+      const Divider(),
       const SizedBox(
         height: 10,
       ),

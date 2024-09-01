@@ -17,7 +17,7 @@ class VideoPlayer extends StatelessWidget {
           height: 10,
         ),
 
-        Container(
+        SizedBox(
           width: double.infinity,
           height: 200,
           child: McPlayer.network(
@@ -29,7 +29,7 @@ class VideoPlayer extends StatelessWidget {
           height: 10,
         ),
 
-        Container(
+        SizedBox(
           width: double.infinity,
           height: 200,
           child: McPlayer.asset(

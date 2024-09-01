@@ -47,7 +47,7 @@ class McText extends StatelessWidget {
     // Extract the first 5 words from the text
     List<String> words = txt.split(' ');
     String truncatedTxt =
-        words.length > 5 ? words.sublist(0, 5).join(' ') + '...' : txt;
+        words.length > 5 ? '${words.sublist(0, 5).join(' ')}...' : txt;
 
     return Text(
       show5Words ? truncatedTxt : txt,
@@ -58,7 +58,8 @@ class McText extends StatelessWidget {
       style: TextStyle(
         fontSize: fontSize,
         color: color,
-        fontFamily: fontFamily,
+        fontFamily:
+            fontFamily ?? Theme.of(context).textTheme.titleLarge?.fontFamily,
         overflow: TextOverflow.ellipsis,
         fontWeight: blod ? FontWeight.bold : null,
       ),

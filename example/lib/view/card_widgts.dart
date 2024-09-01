@@ -9,23 +9,23 @@ class CardWidgts extends StatelessWidget {
     return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const McText(
+        McText(
           txt: "----------- Card  ------------",
           fontSize: 20,
         ),
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
         //card item
-        const McCardItem(
+        McCardItem(
           width: double.infinity,
           hight: 100,
           alignment: Alignment.center,
-          radius: 5,
+          radius: BorderRadius.all(Radius.circular(10)),
           child: McText(txt: "hi how are you"),
         ),
         Divider(),
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
       ],

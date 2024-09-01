@@ -99,7 +99,8 @@ class VideoPlayerController extends GetxController {
 
   /// Forwards the video by 5 seconds.
   void forward() {
-    final newPosition = model.controller.value.position + Duration(seconds: 5);
+    final newPosition =
+        model.controller.value.position + const Duration(seconds: 5);
     model.showProgressBar = true;
     model.controller.seekTo(newPosition);
     update();
@@ -107,7 +108,8 @@ class VideoPlayerController extends GetxController {
 
   /// Rewinds the video by 5 seconds.
   void rewind() {
-    final newPosition = model.controller.value.position - Duration(seconds: 5);
+    final newPosition =
+        model.controller.value.position - const Duration(seconds: 5);
     model.controller.seekTo(newPosition);
     update();
   }

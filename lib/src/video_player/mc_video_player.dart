@@ -61,6 +61,7 @@ class McVideoPlayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async => false,
       child: GetBuilder<VideoPlayerController>(
@@ -75,6 +76,7 @@ class McVideoPlayer extends StatelessWidget {
                 children: [
                   // Video player widget
                   controller.model.controller.value.isInitialized
+                      // ignore: sized_box_for_whitespace
                       ? Container(
                           width: controller.model.showFullScreen
                               ? double.infinity
@@ -216,7 +218,7 @@ class McVideoPlayer extends StatelessWidget {
                                       child: VideoProgressIndicator(
                                         controller.model.controller,
                                         allowScrubbing: true,
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                       ),
                                     ),
                                   ),

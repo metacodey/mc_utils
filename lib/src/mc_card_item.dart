@@ -6,9 +6,10 @@ class McCardItem extends StatelessWidget {
   final Widget child;
   final double? width;
   final double? hight;
-  final double radius;
+  final BorderRadius? radius;
   final Color? colorBorder;
   final bool showShdow;
+  final Color? color;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
@@ -41,8 +42,9 @@ class McCardItem extends StatelessWidget {
     this.padding,
     this.margin,
     this.showShdow = true,
-    this.radius = 20,
+    this.radius,
     this.alignment,
+    this.color,
   });
 
   @override
@@ -55,16 +57,16 @@ class McCardItem extends StatelessWidget {
       alignment: alignment,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: Colors.white,
+        color: color ?? Colors.white,
         border: colorBorder != null
             ? Border.all(width: 2, color: colorBorder!)
             : null,
-        borderRadius: BorderRadius.all(Radius.circular(radius)),
+        borderRadius: radius ?? const BorderRadius.all(Radius.circular(10)),
         boxShadow: showShdow
             ? [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.3),
-                  offset: Offset(0.0, 1.5),
+                  offset: const Offset(0.0, 1.5),
                   blurRadius: 7.0,
                 )
               ]
