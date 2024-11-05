@@ -12,7 +12,7 @@ class McButton extends McText {
   final double? width;
   final bool defualtWideth;
   final double? sizeIcon;
-  final double raudis;
+  final BorderRadius? raudis;
   final EdgeInsetsGeometry? padding;
 
   /// The [McButton] constructor allows you to specify various properties for the button.
@@ -52,7 +52,7 @@ class McButton extends McText {
     super.key,
     this.onTap,
     this.icon,
-    this.raudis = 10,
+    this.raudis,
     this.width,
     this.colorBtn = Colors.white,
     this.colorBorder = Colors.black,
@@ -82,7 +82,7 @@ class McButton extends McText {
         decoration: BoxDecoration(
           color: colorBtn,
           border: Border.all(width: 2, color: colorBorder),
-          borderRadius: BorderRadius.all(Radius.circular(raudis)),
+          borderRadius: raudis ?? BorderRadius.all(Radius.circular(10)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

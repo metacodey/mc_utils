@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 class McCardItem extends StatelessWidget {
   final Widget child;
   final double? width;
+  final double? widthBorder;
+
   final double? hight;
   final BorderRadius? radius;
   final Color? colorBorder;
   final bool showShdow;
   final Color? color;
+  final Function()? onTap;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final AlignmentGeometry? alignment;
@@ -37,6 +40,7 @@ class McCardItem extends StatelessWidget {
     super.key,
     required this.child,
     this.width,
+    this.widthBorder,
     this.hight,
     this.colorBorder,
     this.padding,
@@ -44,35 +48,38 @@ class McCardItem extends StatelessWidget {
     this.showShdow = true,
     this.radius,
     this.alignment,
+    this.onTap,
     this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding ?? const EdgeInsets.all(15),
-      width: width,
-      height: hight,
-      margin: margin ?? const EdgeInsets.all(0.50),
-      alignment: alignment,
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        color: color ?? Colors.white,
-        border: colorBorder != null
-            ? Border.all(width: 2, color: colorBorder!)
-            : null,
-        borderRadius: radius ?? const BorderRadius.all(Radius.circular(10)),
-        boxShadow: showShdow
-            ? [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  offset: const Offset(0.0, 1.5),
-                  blurRadius: 7.0,
-                )
-              ]
-            : [],
-      ),
-      child: child,
-    );
+    return InkWell(
+        onTap: onTap,
+        child: Container(
+          padding: padding ?? const EdgeInsets.all(15),
+          width: width,
+          height: hight,
+          margin: margin ?? const EdgeInsets.all(0.50),
+          alignment: alignment,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            color: color ?? Colors.white,
+            border: colorBorder != null
+                ? Border.all(width: widthBorder ?? 2, color: colorBorder!)
+                : null,
+            borderRadius: radius ?? const BorderRadius.all(Radius.circular(10)),
+            boxShadow: showShdow
+                ? [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      offset: const Offset(0.0, 1.5),
+                      blurRadius: 7.0,
+                    )
+                  ]
+                : [],
+          ),
+          child: child,
+        ));
   }
 }

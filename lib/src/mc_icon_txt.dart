@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mc_utils/mc_utils.dart';
 
 /// [McIconTxt] is a widget that combines an icon with an optional text label.
 /// It supports customization of the icon's appearance, background color, and text style,
@@ -11,6 +12,8 @@ class McIconTxt extends StatelessWidget {
   final String? text;
   final Function()? onPress;
   final bool blod;
+  final bool isVertical;
+  final bool isRight;
   final double sizeIcon;
   final double rudisIcon;
   final double sizeTitle;
@@ -47,6 +50,8 @@ class McIconTxt extends StatelessWidget {
     this.sizeTitle = 12,
     this.rudisIcon = 23,
     this.sizeIcon = 21,
+    this.isVertical = false,
+    this.isRight = false,
     this.onPress,
   }) : super(key: key);
 
@@ -54,33 +59,81 @@ class McIconTxt extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPress,
-      child: Column(
-        children: [
-          // Displays the icon inside a circle with optional background color.
-          CircleAvatar(
-            radius: rudisIcon,
-            backgroundColor: bgColor,
-            child: Icon(
-              icons,
-              size: sizeIcon,
-              color: icColor,
+      child: isVertical
+          ? itemRows()
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Displays the icon inside a circle with optional background color.
+                CircleAvatar(
+                  radius: rudisIcon,
+                  backgroundColor: bgColor,
+                  child: Icon(
+                    icons,
+                    size: sizeIcon,
+                    color: icColor,
+                  ),
+                ),
+                if (text != null)
+                  const SizedBox(
+                    height: 5,
+                  ),
+                // Displays the optional text below the icon, if provided.
+                if (text != null)
+                  Text(
+                    text!,
+                    style: TextStyle(
+                      fontSize: sizeTitle,
+                      color: tiColor,
+                      fontWeight: blod ? FontWeight.bold : null,
+                    ),
+                  ),
+              ],
             ),
+    );
+  }
+
+  Widget itemRows() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        // Displays the optional text below the icon, if provided.
+        if (text != null && isRight)
+          McText(
+            txt: text!,
+            blod: blod,
+            color: tiColor,
+            fontSize: sizeTitle,
           ),
+        if (text != null && isRight)
           const SizedBox(
-            height: 5,
+            width: 5,
           ),
-          // Displays the optional text below the icon, if provided.
-          if (text != null)
-            Text(
-              text!,
-              style: TextStyle(
-                fontSize: sizeTitle,
-                color: tiColor,
-                fontWeight: blod ? FontWeight.bold : null,
-              ),
-            ),
-        ],
-      ),
+        // Displays the icon inside a circle with optional background color.
+        CircleAvatar(
+          radius: rudisIcon,
+          backgroundColor: bgColor,
+          child: Icon(
+            icons,
+            size: sizeIcon,
+            color: icColor,
+          ),
+        ),
+        if (text != null && !isRight)
+          const SizedBox(
+            width: 5,
+          ),
+        // Displays the optional text below the icon, if provided.
+        if (text != null && !isRight)
+          McText(
+            txt: text!,
+            blod: blod,
+            color: tiColor,
+            fontSize: sizeTitle,
+          )
+      ],
     );
   }
 }

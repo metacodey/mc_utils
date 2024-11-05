@@ -19,7 +19,7 @@ class ListButtons extends StatelessWidget {
         McListButtons(
           list: const ["ali", "salh", "alaa", "abdo", "younas"],
           sizeFont: 20,
-          radius: 30,
+          radius: BorderRadius.circular(30),
           isHorizontal: false,
           onSelected: (p0) {},
         ),
@@ -29,7 +29,7 @@ class ListButtons extends StatelessWidget {
         McListButtons(
           list: const ["ali", "salh", "mohmmed", "abdo", "younas"],
           sizeFont: 20,
-          radius: 30,
+          radius: BorderRadius.circular(30),
           isHorizontal: true,
           onSelected: (p0) {},
         ),

@@ -23,7 +23,8 @@ class ToolWidget extends StatelessWidget {
           height: 5,
         ),
         McText(
-          txt: "check nummber  : 44521 =>${McProcess.checkIsNumirc("44521")}",
+          txt:
+              "check nummber  : 44521 =>${McProcess.checkContainText("44521")}",
         ),
         const SizedBox(
           height: 5,

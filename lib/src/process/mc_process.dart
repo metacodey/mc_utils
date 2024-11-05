@@ -77,11 +77,22 @@ class McProcess {
     }
   }
 
-  /// [checkIsNumirc] checks if the given text consists of numeric characters only.
-  static bool checkIsNumirc(String txt) {
-    RegExp regExp = RegExp(r'^\d+$');
+  /// [cheCkContainNumber] checks if the given text consists of numeric characters only.
+  static bool cheCkContainNumber(String txt) {
+    txt = txt.trim();
+    RegExp regExp = RegExp(r'^\d+(\.\d+)?$');
+    if (txt.endsWith('.')) {
+      txt = txt + '0';
+    }
     bool isNum = regExp.hasMatch(txt);
     return isNum;
+  }
+
+  /// [checkContainText] checks if the given text consists of numeric characters only.
+  static bool checkContainText(String txt) {
+    // يتحقق من أن النص يحتوي على أحرف وليس أرقامًا فقط مع الفاصلة العشرية
+    RegExp regExp = RegExp(r'^(?!\d+$)(?!\d+(\.\d+)?$).+');
+    return regExp.hasMatch(txt);
   }
 
   /// [containsArabicLettersOrSpacesOrUnallowedSymbols] checks if the text

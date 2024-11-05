@@ -1,9 +1,11 @@
 import 'package:example/view/button_widgets.dart';
 import 'package:example/view/card_widgts.dart';
+import 'package:example/view/date_time_picker.dart';
 import 'package:example/view/drop_down_widgets.dart';
 import 'package:example/view/image_widgets.dart';
 import 'package:example/view/line_step_widgets.dart';
 import 'package:example/view/list_buttons.dart';
+import 'package:example/view/otp_textfield.dart';
 import 'package:example/view/pop_menu_widgets.dart';
 import 'package:example/view/text_field_widgets.dart';
 import 'package:example/view/text_widgets.dart';
@@ -26,7 +28,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const McText(txt: "mc_utils"),
       ),
-      body: const Center(
+      body: Center(
         child: Padding(
           padding: EdgeInsets.all(15),
           child: SingleChildScrollView(
@@ -35,20 +37,26 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  ImageWidgets(),
-                  TextFieldWidgets(),
-                  DropDownWidgets(),
-                  TextWidgets(),
-                  CardWidgts(),
-                  ButtonWidgets(),
-                  LineStepWidgets(),
-                  PopMenuWidgets(),
-                  ListButtons(),
-                  VideoPlayer(),
-                  ToolWidget()
+                  const ImageWidgets(),
+                  const TextFieldWidgets(),
+                  const DropDownWidgets(),
+                  const TextWidgets(),
+                  const CardWidgts(),
+                  const ButtonWidgets(),
+                  const LineStepWidgets(),
+                  const PopMenuWidgets(),
+                  const ListButtons(),
+                  const VideoPlayer(),
+                  const ToolWidget(),
+                  const OtpTextfield(),
+                  TextFieldDateTimePicker(
+                    title: "select date",
+                    initDatetime: DateTime.now(),
+                    onTap: (p0) {},
+                  )
                 ],
               ),
             ),

@@ -8,7 +8,7 @@ class McListButtons extends StatelessWidget {
   final List<String> list;
   final Color colorSelected;
   final Color colorBtn;
-  final double radius;
+  final BorderRadius? radius;
   final Color fontColor;
   final Color fontColorSelected;
   final double sizeFont;
@@ -51,7 +51,7 @@ class McListButtons extends StatelessWidget {
     this.fontColor = const Color(0xFF252B5C),
     this.fontColorSelected = Colors.white,
     this.sizeFont = 14,
-    this.radius = 30,
+    this.radius,
     this.colorSelected = const Color(0xFF252B5C),
     this.paddingContect,
     this.paddingBtn,

@@ -27,7 +27,6 @@ class ButtonWidgets extends StatelessWidget {
               colorBorder: const Color(0xFF092A77),
               blod: true,
               fontSize: 18,
-              raudis: 10,
               defualtWideth: true,
               onTap: () {
                 //  print("button");
@@ -41,7 +40,6 @@ class ButtonWidgets extends StatelessWidget {
               colorBorder: Colors.white,
               blod: true,
               fontSize: 18,
-              raudis: 10,
               defualtWideth: true,
               onTap: () {
                 //       print("button");
@@ -62,7 +60,7 @@ class ButtonWidgets extends StatelessWidget {
           colorBorder: Colors.white,
           blod: true,
           fontSize: 18,
-          raudis: 20,
+          raudis: BorderRadius.circular(20),
           defualtWideth: false,
           onTap: () {
             //   print("button");
