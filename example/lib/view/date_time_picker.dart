@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:mc_utils/mc_utils.dart';
 
 class TextFieldDateTimePicker extends StatefulWidget {

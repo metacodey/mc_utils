@@ -82,7 +82,7 @@ class McProcess {
     txt = txt.trim();
     RegExp regExp = RegExp(r'^\d+(\.\d+)?$');
     if (txt.endsWith('.')) {
-      txt = txt + '0';
+      txt = '${txt}0';
     }
     bool isNum = regExp.hasMatch(txt);
     return isNum;

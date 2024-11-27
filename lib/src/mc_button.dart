@@ -82,7 +82,7 @@ class McButton extends McText {
         decoration: BoxDecoration(
           color: colorBtn,
           border: Border.all(width: 2, color: colorBorder),
-          borderRadius: raudis ?? BorderRadius.all(Radius.circular(10)),
+          borderRadius: raudis ?? const BorderRadius.all(Radius.circular(10)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

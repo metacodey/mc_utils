@@ -55,7 +55,7 @@ class _OtpTextfieldState extends State<OtpTextfield> {
                     children: [
                       const TextSpan(
                         text: "resend_code",
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.black38,
                         ),
                       ),
