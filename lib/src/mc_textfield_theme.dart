@@ -49,6 +49,7 @@ class McTextFieldTheme {
       hintStyle: hintStyle,
       labelText: lableText,
       hintText: hintText,
+      filled: fillColor != null ? true : false,
       contentPadding:
           contentPadding ?? const EdgeInsets.fromLTRB(20, 10, 20, 10),
       focusedBorder: OutlineInputBorder(

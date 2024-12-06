@@ -5,11 +5,12 @@ import 'package:mc_utils/src/mc_text.dart';
 /// It supports adding an icon, custom border and background colors,
 /// padding, and tap actions, and can adjust its width based on the screen size.
 class McButton extends McText {
-  final Color colorBorder;
+  final Color? colorBorder;
   final Color colorBtn;
   final IconData? icon;
   final Function()? onTap;
   final double? width;
+  final double? widthBorder;
   final bool defualtWideth;
   final double? sizeIcon;
   final BorderRadius? raudis;
@@ -27,6 +28,8 @@ class McButton extends McText {
   ///
   /// [width] determines whether the button should occupy a fixed width based on the screen size.
   ///
+  /// [widthBorder] determines whether the Border button should occupy a fixed width based on the screen size.
+
   /// [raudis] specifies the border radius of the button's corners.
   ///
   /// [padding] sets the padding inside the button.
@@ -55,7 +58,7 @@ class McButton extends McText {
     this.raudis,
     this.width,
     this.colorBtn = Colors.white,
-    this.colorBorder = Colors.black,
+    this.colorBorder,
     required super.txt,
     super.fontSize,
     super.color,
@@ -66,6 +69,7 @@ class McButton extends McText {
     super.show5Words = false,
     this.defualtWideth = false,
     this.sizeIcon,
+    this.widthBorder,
     this.padding =
         const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
   });
@@ -81,7 +85,9 @@ class McButton extends McText {
             const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
         decoration: BoxDecoration(
           color: colorBtn,
-          border: Border.all(width: 2, color: colorBorder),
+          border: colorBorder == null
+              ? null
+              : Border.all(width: widthBorder ?? 1, color: colorBorder!),
           borderRadius: raudis ?? const BorderRadius.all(Radius.circular(10)),
         ),
         child: Row(
