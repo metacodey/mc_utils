@@ -10,7 +10,7 @@ class McImageAssets extends StatelessWidget {
   final String? pathImgError;
   final BoxFit fit;
   final bool isCircle;
-  final double radius;
+  final BorderRadius? radius;
 
   /// Constructs an instance of [McImageAssets] with the provided parameters.
   ///
@@ -27,7 +27,7 @@ class McImageAssets extends StatelessWidget {
     this.width,
     this.fit = BoxFit.cover,
     this.isCircle = false,
-    this.radius = 10,
+    this.radius,
     this.pathImgError,
   });
 
@@ -41,7 +41,7 @@ class McImageAssets extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           // Apply a circular shape if isCircle is true, otherwise use rectangular with radius
-          borderRadius: !isCircle ? BorderRadius.circular(radius) : null,
+          borderRadius: !isCircle ? radius ?? BorderRadius.circular(10) : null,
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           // Set the image as background
           image: DecorationImage(image: AssetImage(path), fit: fit),
