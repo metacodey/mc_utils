@@ -18,3 +18,8 @@
 ## 0.0.5
 
 * TODO:fix attributes
+
+
+## 0.0.6
+
+* TODO:fix attributes

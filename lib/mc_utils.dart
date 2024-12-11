@@ -20,5 +20,4 @@ export 'src/date_time_picker/mc_datetime_picker.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:animated_custom_dropdown/custom_dropdown.dart';
 export 'package:get/get.dart';
-export 'package:file_picker/file_picker.dart';
 export 'package:cached_video_player_plus/cached_video_player_plus.dart';

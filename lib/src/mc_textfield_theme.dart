@@ -30,6 +30,7 @@ class McTextFieldTheme {
     String hintText = "",
     Widget? prefixIcon,
     Color? fillColor,
+    bool showFilColor = false,
     TextStyle? labelStyle,
     TextStyle? hintStyle,
     Widget? suffixIcon,
@@ -49,7 +50,7 @@ class McTextFieldTheme {
       hintStyle: hintStyle,
       labelText: lableText,
       hintText: hintText,
-      filled: fillColor != null ? true : false,
+      filled: fillColor != null ? true : showFilColor,
       contentPadding:
           contentPadding ?? const EdgeInsets.fromLTRB(20, 10, 20, 10),
       focusedBorder: OutlineInputBorder(

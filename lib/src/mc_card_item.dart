@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// [McCardItem] is a customizable card widget that can contain a child widget and supports various styling options.
 /// It allows for customization of width, height, border color, shadow visibility, padding, margin, and border radius.
 class McCardItem extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final double? width;
   final double? widthBorder;
 
@@ -38,7 +38,7 @@ class McCardItem extends StatelessWidget {
   /// [alignment] specifies the alignment of the child widget inside the card.
   const McCardItem({
     super.key,
-    required this.child,
+    this.child,
     this.width,
     this.widthBorder,
     this.hight,

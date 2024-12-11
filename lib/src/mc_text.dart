@@ -12,6 +12,7 @@ class McText extends StatelessWidget {
   final TextAlign? txtAlign;
   final bool show5Words;
   final String txt;
+  final EdgeInsetsGeometry? padding;
 
   /// The [McText] constructor allows you to specify the text and its styling options.
   ///
@@ -30,6 +31,8 @@ class McText extends StatelessWidget {
   /// [show5Words] when set to true, truncates the text to show only the first 5 words.
   ///
   /// [txt] is the text content to be displayed.
+  ///
+  /// [padding] is the padding of the text content .
   const McText({
     Key? key,
     this.fontSize,
@@ -40,6 +43,7 @@ class McText extends StatelessWidget {
     this.txtAlign,
     this.show5Words = false,
     required this.txt,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -49,19 +53,22 @@ class McText extends StatelessWidget {
     String truncatedTxt =
         words.length > 5 ? '${words.sublist(0, 5).join(' ')}...' : txt;
 
-    return Text(
-      show5Words ? truncatedTxt : txt,
-      maxLines: line,
-      overflow: TextOverflow.ellipsis,
-      softWrap: true,
-      textAlign: txtAlign,
-      style: TextStyle(
-        fontSize: fontSize,
-        color: color,
-        fontFamily:
-            fontFamily ?? Theme.of(context).textTheme.titleLarge?.fontFamily,
+    return Padding(
+      padding: padding ?? const EdgeInsets.all(0),
+      child: Text(
+        show5Words ? truncatedTxt : txt,
+        maxLines: line,
         overflow: TextOverflow.ellipsis,
-        fontWeight: blod ? FontWeight.bold : null,
+        softWrap: true,
+        textAlign: txtAlign,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: color,
+          fontFamily:
+              fontFamily ?? Theme.of(context).textTheme.titleLarge?.fontFamily,
+          overflow: TextOverflow.ellipsis,
+          fontWeight: blod ? FontWeight.bold : null,
+        ),
       ),
     );
   }

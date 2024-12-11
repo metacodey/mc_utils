@@ -47,14 +47,14 @@ class McImageFile extends StatelessWidget {
           // Set the image as background
           image: DecorationImage(image: FileImage(file), fit: fit),
         ),
-        child: child,
+        child: height != null ? null : child,
       ),
       errorBuilder: (context, url, error) => Container(
         width: width,
         height: height,
         decoration: BoxDecoration(
           // Apply the same shape and radius settings as for the normal image
-          borderRadius: !isCircle ? BorderRadius.circular(radius) : null,
+          borderRadius: !isCircle ? radius ?? BorderRadius.circular(10) : null,
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           // Display the error image as background if the main image fails to load
           image: DecorationImage(
